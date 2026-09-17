@@ -1,0 +1,325 @@
+/* ====================
+   FAMILIA: ARCHIVO BLACK
+   ==================== */
+@font-face {
+  font-family: "Archivo Black";
+  src:
+    url("./fonts/ArchivoBlack-Regular.woff2") format("woff2"),
+    url("./fonts/ArchivoBlack-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ====================
+   FAMILIA: OPEN SANS
+   ==================== */
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("./fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./fonts/OpenSans-SemiBold.woff2") format("woff2"),
+    url("./fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:
+    url("./fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("./fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Archivo Black", sans-serif;
+}
+
+/* RESET BÁSICO Y FONDO OSCURO */
+body {
+  background-color: #0a0b10; /* Color oscuro del diseño */
+  color: #ffffff; /* Texto blanco para que resalte */
+  font-family: "Open Sans", Arial, sans-serif; /* Tu fuente principal */
+  margin: 0; /* Quita los bordes blancos obligatorios por rúbrica */
+}
+
+/* CONTENEDOR PRINCIPAL CENTRADO */
+.page {
+  max-width: 1440px; /* Ancho máximo del diseño en Figma */
+  margin: 0 auto; /* Centra el contenido en pantallas grandes */
+  padding: 0 20px; /* Un poco de espacio a los lados */
+  box-sizing: border-box;
+}
+
+/* ================================= */
+/* 1. SECCIÓN DE PERFIL              */
+/* ================================= */
+
+.profile {
+  display: flex; /* Esto pone el texto y la foto en una sola fila */
+  justify-content: space-between; /* Separa el texto de la foto a los extremos */
+  align-items: center; /* Centra ambos elementos verticalmente */
+  margin-top: 80px;
+  margin-bottom: 120px;
+  gap: 40px; /* Evita que se peguen si la pantalla se encoge */
+}
+
+.profile__info {
+  max-width: 600px; /* Evita que el texto se estire de más */
+}
+
+.profile__name {
+  font-family: "Archivo Black", sans-serif; /* Aquí usamos la fuente gruesa */
+  font-size: 64px;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.profile__description {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* ESTILO DE TU FOTO */
+.profile__image {
+  width: 400px; /* Ajusta este valor si la quieres más grande o chica */
+  height: 400px;
+  object-fit: cover; /* Evita que tu cara se aplaste o estire */
+  border-radius: 20px; /* Redondea las esquinas */
+}
+
+/* ENLACES (Descargar CV, GitHub, etc.) */
+.profile__links {
+  display: flex;
+  gap: 30px;
+}
+
+.profile__link {
+  color: #ffffff;
+  text-decoration: none; /* Quita la línea fea de abajo del link */
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* EFECTO HOVER (Obligatorio por la rúbrica) */
+.profile__link:hover {
+  opacity: 0.7; /* Hace que el texto brille un poco al pasar el ratón */
+}
+
+/* ================================= */
+/* 2. SECCIÓN DE HABILIDADES         */
+/* ================================= */
+
+.skills {
+  margin-bottom: 120px; /* Da espacio antes de llegar a los proyectos */
+}
+
+.skills__title {
+  font-family: "Archivo Black", sans-serif; /* Fuente gruesa para el título */
+  font-size: 32px;
+  margin: 0 0 40px 0;
+}
+
+.skills__list {
+  list-style: none; /* Quita los puntos (viñetas) por defecto */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Forma los íconos en una sola fila horizontal */
+  gap: 40px; /* Deja un espacio limpio entre cada ícono */
+  align-items: center; /* Los centra perfectamente */
+}
+
+.skills__icon {
+  height: 60px; /* Hace que todos los íconos midan lo mismo de alto */
+  width: auto;
+  transition: transform 0.3s ease; /* Prepara un pequeño efecto visual */
+}
+
+/* EFECTO HOVER PARA LOS ÍCONOS */
+.skills__icon:hover {
+  transform: scale(
+    1.1
+  ); /* Hace que el ícono crezca un poquito al pasar el ratón */
+}
+
+/* ================================= */
+/* 3. SECCIÓN DE PROYECTOS           */
+/* ================================= */
+
+.projects {
+  margin-bottom: 120px; /* Espacio antes de llegar al pie de página */
+}
+
+.projects__title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 32px;
+  margin: 0 0 40px 0;
+}
+
+/* La cuadrícula mágica */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Crea 2 columnas exactamente iguales */
+  gap: 40px; /* Deja un pasillo despacio entre los proyectos */
+}
+
+/* Estructura de cada tarjeta */
+.project {
+  display: flex;
+  flex-direction: column; /* Apila la foto, el título y el texto hacia abajo */
+}
+
+/* Controlando las imágenes gigantes */
+.project__image {
+  width: 100%; /* Ocupa el ancho total de su columna */
+  height: 350px; /* Les da una altura pareja a ambas fotos */
+  object-fit: cover; /* Recorta la foto sin aplastarla para que quepa bien */
+  border-radius: 20px; /* Redondea las esquinas igual que tu foto de perfil */
+  margin-bottom: 20px;
+}
+
+.project__title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+}
+
+.project__description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Empuja los enlaces hasta abajo para que queden alineados */
+}
+
+.project__links {
+  display: flex;
+  gap: 20px;
+}
+
+.project__link {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline; /* Les pone una rayita abajo para que se note que son clics */
+}
+
+.project__link:hover {
+  opacity: 0.7; /* El efecto brillo obligatorio de la rúbrica */
+}
+
+/* ================================= */
+/* 4. PIE DE PÁGINA (CONTACTO)       */
+/* ================================= */
+
+.footer {
+  text-align: center; /* Centra todo el contenido */
+  padding-bottom: 80px; /* Deja un espacio para que no choque con el fondo de la pantalla */
+}
+
+.footer__title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 32px;
+  margin: 0 0 10px 0;
+}
+
+.footer__subtitle {
+  font-size: 18px;
+  margin: 0 0 30px 0;
+  color: #a0a0a0; /* Un gris claro para que resalte más el título y el correo */
+}
+
+.footer__email {
+  color: #ffffff;
+  font-size: 32px; /* Letra grande para que sea fácil contactarte */
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+/* Efecto al pasar el ratón sobre el correo */
+.footer__email:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor de las redes sociales */
+.footer__social {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 40px; /* Separación entre GitHub y LinkedIn */
+}
+
+.footer__social-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer__social-link:hover {
+  opacity: 0.7; /* Cumpliendo el hover de la rúbrica */
+}
+
+/* ================================= */
+/* 5. DISEÑO RESPONSIVO (CELULARES)  */
+/* ================================= */
+
+/* Estas reglas SOLO se aplican en pantallas de 768px o más pequeñas */
+@media screen and (max-width: 768px) {
+  /* 1. PERFIL: Apila la foto y el texto en una columna centrada */
+  .profile {
+    flex-direction: column; /* Pone uno debajo del otro en vez de al lado */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  .profile__name {
+    font-size: 40px; /* Achica el título para que quepa en la pantalla */
+  }
+
+  .profile__image {
+    width: 100%;
+    max-width: 320px; /* Evita que la foto se salga de la pantalla */
+    height: 320px;
+    margin-top: 30px;
+  }
+
+  .profile__links {
+    justify-content: center; /* Centra tus links de Descargar CV y GitHub */
+  }
+
+  /* 2. HABILIDADES: Permite que los íconos salten de línea si no caben */
+  .skills__list {
+    flex-wrap: wrap; /* El secreto para que no se apachurren los íconos */
+    justify-content: center;
+  }
+
+  /* 3. PROYECTOS: Cambia de dos columnas a una sola columna */
+  .projects__grid {
+    grid-template-columns: 1fr; /* 1 sola columna que ocupa todo el ancho */
+  }
+
+  .footer {
+    padding-bottom: 40px;
+  }
+
+  .footer__email {
+    font-size: 24px; /* Achica tu correo para que no se corte en móviles */
+  }
+}
